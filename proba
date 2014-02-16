@@ -1,0 +1,9 @@
+#!/bin/bash
+ikiwiki --setup ~/Minorbits.setup
+ikiwiki ~/Minorbits ~/zlatandebian.github.com/ --refresh
+rm -r ~/zlatandebian.github.com/*
+cp -R ~/public_html/Minorbits/* ~/zlatandebian.github.com/
+cd ~/zlatandebian.github.com
+git add .
+git commit -a -m update
+git push origin master
